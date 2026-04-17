@@ -4,41 +4,52 @@
 
     "pages": [
         {
-            "icon": "./assets/images/home/Ananyo1.png",
+            "icon": "bi bi-house-door-fill",
+            "name": "Home",
+            "link": "/home",
+            "content": "content/home.html"
+        },
+        {
+            "icon": "bi bi-person-fill",
             "name": "About",
             "link": "/about",
             "content": "content/about.html"
         },
         {
-            "icon": "📖",
+            "icon": "bi bi-file-earmark-text-fill",
             "name": "Resume",
             "link": "/resume",
             "content": "content/resume.html"
         },
         {
-            "icon": "bi bi-suitcase-lg-fill",
+            "icon": "bi bi-briefcase-fill",
             "name": "Work Experience",
             "link": "/experience",
             "content": "content/experience.html"
         },
         {
-            "icon": "✨",
+            "icon": "bi bi-stars",
             "name": "Projects",
             "link": "/projects",
             "content": "content/projects.html"
         },
         {
-            "icon": "🎓",
+            "icon": "bi bi-code-slash",
+            "name": "Skills",
+            "link": "/skills",
+            "content": "content/skills.html"
+        },
+        {
+            "icon": "bi bi-patch-check-fill",
             "name": "Certifications",
             "link": "/certifications",
             "content": "content/certifications.html"
         },
         {
-            "icon": "✉️",
+            "icon": "bi bi-envelope-fill",
             "name": "Contact",
             "link": "/contact",
-            "content": "content/contact.md"
+            "content": "content/contact.html"
         }
     ]
-
 }

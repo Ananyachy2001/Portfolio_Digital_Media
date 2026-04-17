@@ -1,40 +1,54 @@
-.card-container{
-    border-radius: 15px;
-    border: 1px solid #e5e5e5;
-    height: 250px;
-    width: 250px;
+/* ==========================================================================
+   Legacy card styles — thin wrappers mapped to the new design system so any
+   content that still references them (e.g., embedded PDFs) continues to work.
+   ========================================================================== */
+
+.card-container {
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
     overflow: hidden;
     cursor: pointer;
     text-decoration: none !important;
+    background: var(--card-bg);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card-img-container{
-    height: 150px;
+.card-container:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-img-container {
     width: 100%;
-    background-color:#f7f6f3;
+    background-color: var(--surface-soft);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    border-radius: var(--radius);
 }
 
-.card-img{
+.card-img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.card-content{
-    padding: 10px;
-    line-height: normal;
-    color: #000;
+.card-content {
+    padding: 14px 16px;
+    line-height: 1.5;
+    color: var(--text);
 }
 
-.card-container a{
-    text-decoration: none !important;
-}
+.card-container a { text-decoration: none !important; }
 
 .pdf-container {
-    width: 800px;
-    height: 1100px; /* Adjust this value to increase or decrease the height */
-    border: 1px solid #000; /* Optional border for visibility */
+    width: 100%;
+    max-width: 820px;
+    aspect-ratio: 8 / 11;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--surface);
 }
