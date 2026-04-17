@@ -180,55 +180,87 @@ fetchDB().then((data) => {
 })
 
 
+// Build an icon node safely using DOM APIs so that values coming from
+// data.json cannot inject arbitrary HTML/attributes. Pass wrapImg=true to
+// wrap the <img> in the sidebar's <div class="icon"> container.
+function buildIconNode(icon, wrapImg){
+    if (isFileOrLink(icon)){
+        const safeSrc = sanitizeUrl(icon)
+        const img = document.createElement("img")
+        if (safeSrc) img.setAttribute("src", safeSrc)
+        img.className = "tw-object-contain"
+        img.style.width = "80%"
+        if (!wrapImg) return img
+        const wrapper = document.createElement("div")
+        wrapper.className = "icon"
+        wrapper.appendChild(img)
+        return wrapper
+    }
+    if (isEmoji(icon)){
+        const p = document.createElement("p")
+        p.className = ""
+        p.textContent = icon
+        return p
+    }
+    const i = document.createElement("i")
+    i.className = (typeof icon === "string" && icon) ? icon : "bi bi-file-earmark"
+    return i
+}
+
 function buildSideBar(icon, name, link, content){
 
-    let iconElement = ""
-    
-    if (isFileOrLink(icon)){
-        iconElement = `<div class="icon"><img src=${icon} class="tw-object-contain" style="width: 80%;"></div>`
-    }else if (isEmoji(icon)){
-        iconElement = `<p class="">${icon}</p>` // bootstrap icon class
+    const btn = document.createElement("button")
+    btn.id = link
+    btn.className = "page-link tw-text-base tw-flex tw-flex-gap-1"
+    btn.addEventListener("click", () => updateContent(content, icon, name, link))
 
-    }else{     
-        iconElement = `<i class="${icon ?? "bi bi-file-earmark"}"></i>` // bootstrap icon class
-    }
+    btn.appendChild(buildIconNode(icon, true))
 
+    const label = document.createElement("div")
+    label.className = ""
+    label.textContent = name
+    btn.appendChild(label)
 
-    sideBarContent.innerHTML += `
-        <button onclick="updateContent('${content}', '${icon}', '${name}', '${link}')" id="${link}" class="page-link tw-text-base tw-flex tw-flex-gap-1">
-            ${iconElement}
-            <div class="">${name}</div>
-        </button>
-    `
+    sideBarContent.appendChild(btn)
+}
+
+// Ensure content is loaded only from the repo's own content/ directory to
+// prevent a malicious data.json from pointing the main view at an arbitrary
+// (possibly cross-origin) URL whose HTML would be injected via innerHTML.
+function isSafeContentPath(path){
+    if (typeof path !== "string") return false
+    if (path.includes("\0") || path.includes("..")) return false
+    return /^(\.\/)?content\/[A-Za-z0-9._\-\/]+\.(md|html?)$/.test(path)
 }
 
 async function updateContent(path, icon, title, link){
 
-    const body = await fetchContent(path)
-
-    let iconElement = ""
-    
-    if (isFileOrLink(icon)){
-        iconElement = `<img src=${icon} class="tw-object-contain" style="width: 80%;">`
-    }else if (isEmoji(icon)){
-        iconElement = `<p class="">${icon}</p>` // bootstrap icon class
-
-    }else{     
-        iconElement = `<i class="${icon ?? "bi bi-file-earmark"}"></i>` // bootstrap icon class
+    if (!isSafeContentPath(path)){
+        console.warn("Refusing to load content from unsafe path:", path)
+        return
     }
 
-    document.querySelector("#content-icon").innerHTML = iconElement
+    const body = await fetchContent(path)
 
-    content.innerHTML = `
+    const iconContainer = document.querySelector("#content-icon")
+    iconContainer.replaceChildren(buildIconNode(icon, false))
 
-        ${path.endsWith(".md") ? md.render(body) : body}   
-    `
+    if (path.endsWith(".md")){
+        // markdown-it is configured with html:false (default), so the rendered
+        // output is already escaped; assign as innerHTML to render the result.
+        content.innerHTML = md.render(body)
+    } else {
+        // .html content files are part of this repo (validated above) and are
+        // trusted, so we render them as-is.
+        content.innerHTML = body
+    }
 
     document.querySelectorAll(".page-link").forEach((ele) => {
         ele.classList.remove("active")
     })
 
-    document.getElementById(link).classList.add("active")
+    const activeEl = document.getElementById(link)
+    if (activeEl) activeEl.classList.add("active")
 
     initializeDfkiSlideshow();
 
@@ -275,31 +307,23 @@ function updateSearch(event){
 function loadSearchResults(data){
 
     if (data.length === 0){
-        return 
+        return
     }
-    searchDropDown.innerHTML = ""
+    searchDropDown.replaceChildren()
 
     data.forEach((item) => {
+        const btn = document.createElement("button")
+        btn.className = "tw-flex tw-text-base tw-place-items-center tw-gap-2 tw-rounded-sm tw-cursor-pointer tw-p-2 tw-px-3 tw-w-full hover:tw-bg-[#f1f0ef]"
+        btn.addEventListener("click", () => searchOnClick(item.link))
 
-        let icon = item.icon
-        let iconElement = ""
-        if (isFileOrLink(icon)){
-            iconElement = `<img src=${icon} class="tw-object-contain" style="width: 80%;">`
-        }else if (isEmoji(icon)){
-            iconElement = `<p class="">${icon}</p>` // bootstrap icon class
-    
-        }else{     
-            iconElement = `<i class="${icon ?? "bi bi-file-earmark"} "></i>` // bootstrap icon class
-        }
+        const iconWrap = document.createElement("div")
+        iconWrap.className = "tw-w-[20px] tw-text-sm tw-h-[20px] tw-overflow-hidden tw-rounded-sm"
+        iconWrap.appendChild(buildIconNode(item.icon, false))
+        btn.appendChild(iconWrap)
 
-        searchDropDown.innerHTML += `
-                <button onclick="searchOnClick('${item.link}')" class="tw-flex tw-text-base tw-place-items-center tw-gap-2 tw-rounded-sm tw-cursor-pointer tw-p-2 tw-px-3 tw-w-full hover:tw-bg-[#f1f0ef]">
-                    <div class="tw-w-[20px] tw-text-sm tw-h-[20px] tw-overflow-hidden tw-rounded-sm">
-                        ${iconElement} 
-                    </div>
-                    ${item.name}
-                </button>
-            `
+        btn.appendChild(document.createTextNode(item.name))
+
+        searchDropDown.appendChild(btn)
     })
 
 }

@@ -25,15 +25,23 @@ function externalLinksPlugin(md) {
   
     md.renderer.rules.link_open = function(tokens, idx, options, env, self) {
       const token = tokens[idx]
-  
-      // Add the target="_blank" attribute
-      const aIndex = token.attrIndex('target')
-      if (aIndex < 0) {
-        token.attrPush(['target', '_blank']) // add new attribute
+
+      // Add target="_blank" so external links open in a new tab.
+      const targetIndex = token.attrIndex('target')
+      if (targetIndex < 0) {
+        token.attrPush(['target', '_blank'])
       } else {
-        token.attrs[aIndex][1] = '_blank' // replace value of existing attribute
+        token.attrs[targetIndex][1] = '_blank'
       }
-  
+
+      // Add rel="noopener noreferrer" to prevent reverse tabnabbing and referrer leakage.
+      const relIndex = token.attrIndex('rel')
+      if (relIndex < 0) {
+        token.attrPush(['rel', 'noopener noreferrer'])
+      } else {
+        token.attrs[relIndex][1] = 'noopener noreferrer'
+      }
+
       return defaultRender(tokens, idx, options, env, self)
     }
 }
