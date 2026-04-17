@@ -73,15 +73,30 @@
 }
 
 .content a {
-    color: var(--accent);
+    color: var(--text);
     text-decoration: none;
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid var(--border-strong);
     transition: color 0.2s ease, border-color 0.2s ease;
 }
 .content a:hover {
     color: var(--accent-strong);
     border-bottom-color: currentColor;
 }
+
+/* Buttons and card-links inside .content should not look like text links */
+.content a.btn,
+.content a.btn-primary,
+.content a.btn-ghost,
+.content a.project-card,
+.content a.cert-card,
+.content a.contact-item,
+.content a.download-card {
+    border-bottom: none;
+}
+.content a.btn-primary { color: var(--accent-contrast); }
+.content a.btn-primary:hover { color: var(--accent-contrast); }
+.content a.btn,
+.content a.btn-ghost { color: var(--text); }
 
 .content ul,
 .content ol {
@@ -93,12 +108,12 @@
 }
 .content ul { list-style: disc; }
 .content ol { list-style: decimal; }
-.content li::marker { color: var(--accent); }
+.content li::marker { color: var(--text-subtle); }
 
 .content blockquote {
     margin: 0;
     padding: 12px 18px;
-    border-left: 3px solid var(--accent);
+    border-left: 3px solid var(--border-strong);
     background: var(--surface-soft);
     border-radius: 0 var(--radius) var(--radius) 0;
     color: var(--text-muted);
@@ -136,14 +151,15 @@
 /* ---- Section label ------------------------------------------------------ */
 .eyebrow {
     display: inline-block;
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--accent);
-    background: var(--accent-soft);
-    padding: 5px 11px;
-    border-radius: 999px;
+    color: var(--text-subtle);
+    background: transparent;
+    padding: 0;
+    border: none;
+    border-radius: 0;
 }
 
 .section {
@@ -173,24 +189,12 @@
     grid-template-columns: 1fr auto;
     gap: 36px;
     align-items: center;
-    padding: 40px 40px 36px;
+    padding: 44px 44px 40px;
     border-radius: var(--radius-xl);
-    background:
-        radial-gradient(1200px 400px at -10% -40%, rgba(108, 92, 231, 0.18), transparent 60%),
-        radial-gradient(600px 300px at 100% 120%, rgba(108, 92, 231, 0.12), transparent 60%),
-        var(--surface);
+    background: var(--surface);
     border: 1px solid var(--border);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
     overflow: hidden;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(135deg, rgba(108, 92, 231, 0.04) 0%, transparent 60%);
-    pointer-events: none;
 }
 
 .hero-content {
@@ -210,10 +214,9 @@
 }
 
 .hero .hero-gradient {
-    background: linear-gradient(120deg, var(--accent) 0%, #ec4899 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text);
+    background: transparent;
+    -webkit-text-fill-color: currentColor;
 }
 
 .hero .tagline {
@@ -237,7 +240,7 @@
     gap: 6px;
 }
 
-.hero-meta i { color: var(--accent); }
+.hero-meta i { color: var(--text-subtle); }
 
 .hero-actions {
     display: flex;
@@ -298,8 +301,8 @@
     transition: border-color 0.2s ease, transform 0.2s ease;
 }
 .stat-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
+    border-color: var(--border-strong);
+    transform: translateY(-1px);
 }
 
 .stat-value {
@@ -340,9 +343,9 @@
 }
 
 .tag.accent {
-    background: var(--accent-soft);
-    color: var(--accent);
-    border-color: transparent;
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
 }
 
 /* ---- Info card (generic) ---------------------------------------------- */
@@ -360,8 +363,8 @@
 .info-card h3 { margin: 0; }
 
 .info-card.highlight {
-    background: linear-gradient(135deg, var(--accent-soft) 0%, var(--surface) 90%);
-    border-color: var(--accent-soft);
+    background: var(--surface-soft);
+    border-color: var(--border);
 }
 
 /* ---- Timeline (experience / education) -------------------------------- */
@@ -382,7 +385,7 @@
     bottom: 6px;
     left: 9px;
     width: 2px;
-    background: linear-gradient(var(--accent), var(--border));
+    background: var(--border);
     border-radius: 2px;
 }
 
@@ -400,7 +403,7 @@
 }
 
 .timeline-item:hover {
-    border-color: var(--accent);
+    border-color: var(--border-strong);
 }
 
 .timeline-item::before {
@@ -408,11 +411,11 @@
     position: absolute;
     top: 26px;
     left: -25px;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--border);
+    background: var(--text);
+    box-shadow: 0 0 0 4px var(--bg);
 }
 
 .timeline-head {
@@ -438,7 +441,7 @@
 }
 
 .timeline-company .company-name {
-    color: var(--accent);
+    color: var(--text);
     font-weight: 600;
 }
 
@@ -456,7 +459,7 @@
     gap: 5px;
 }
 
-.timeline-meta i { color: var(--accent); font-size: 0.92rem; }
+.timeline-meta i { color: var(--text-subtle); font-size: 0.92rem; }
 
 .timeline-desc {
     color: var(--text-muted);
@@ -472,7 +475,7 @@
     color: var(--text-muted);
 }
 
-.timeline-bullets li::marker { color: var(--accent); }
+.timeline-bullets li::marker { color: var(--text-subtle); }
 
 /* ---- Achievement banner (kept and restyled) --------------------------- */
 .achievement-card {
@@ -480,7 +483,7 @@
     padding: 14px 16px;
     background: var(--achievement-bg);
     border: 1px solid var(--achievement-border);
-    border-left: 4px solid var(--accent);
+    border-left: 3px solid var(--text);
     border-radius: var(--radius);
     display: flex;
     flex-direction: column;
@@ -530,13 +533,12 @@
 
 .project-card:hover,
 .cert-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-md);
-    border-color: var(--accent);
+    border-color: var(--border-strong);
 }
 
-.project-card .thumb,
-.cert-card .thumb {
+.project-card .thumb {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -545,6 +547,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.cert-card .thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--surface-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-card .thumb img {
+    object-fit: contain !important;
+    padding: 10px;
 }
 
 .project-card .thumb img,
@@ -565,14 +583,16 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 0.72rem;
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-size: 0.7rem;
     font-weight: 600;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     background: rgba(255, 255, 255, 0.92);
     color: var(--text);
     backdrop-filter: blur(4px);
+    border: 1px solid var(--border);
 }
 
 .dark-mode .project-card .badge,
@@ -628,24 +648,24 @@
 
 .project-card .links a,
 .cert-card .links a {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     border-radius: 8px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: var(--surface-soft);
+    background: transparent;
     color: var(--text-muted);
     font-size: 0.95rem;
     border: 1px solid var(--border);
-    transition: background 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .project-card .links a:hover,
 .cert-card .links a:hover {
-    background: var(--accent);
-    color: var(--accent-contrast);
-    border-color: var(--accent);
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
 }
 
 /* ---- Skill category ---------------------------------------------------- */
@@ -677,15 +697,16 @@
 }
 
 .skill-group h3 i {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    background: var(--accent-soft);
-    color: var(--accent);
-    font-size: 0.95rem;
+    border-radius: 8px;
+    background: var(--surface-soft);
+    color: var(--text);
+    font-size: 0.9rem;
+    border: 1px solid var(--border);
 }
 
 /* ---- Contact -----------------------------------------------------------*/
@@ -709,20 +730,22 @@
     box-shadow: var(--shadow-sm);
 }
 .contact-item:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
+    border-color: var(--border-strong);
+    transform: translateY(-1px);
     color: var(--text);
 }
 .contact-item .icon {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: var(--accent-soft);
-    color: var(--accent);
-    border-radius: 12px;
-    font-size: 1.1rem;
+    background: var(--surface-soft);
+    color: var(--text);
+    border-radius: 10px;
+    font-size: 1.05rem;
+    border: 1px solid var(--border);
 }
 .contact-item .label {
     font-size: 0.75rem;
@@ -734,45 +757,64 @@
     font-weight: 600;
     color: var(--text);
     font-size: 0.95rem;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+.contact-item > span:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
 }
 
 /* ---- Featured download card ------------------------------------------- */
 .download-card {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
     padding: 18px 22px;
-    background: linear-gradient(135deg, var(--accent-soft) 0%, var(--surface) 90%);
-    border: 1px solid var(--accent-soft);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     text-decoration: none !important;
     color: var(--text);
+    transition: border-color 0.2s ease;
 }
+.download-card:hover { border-color: var(--border-strong); }
 .download-card .icon {
-    width: 52px;
-    height: 52px;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: var(--accent);
-    color: var(--accent-contrast);
-    border-radius: 14px;
-    font-size: 1.2rem;
-    box-shadow: 0 8px 18px rgba(108, 92, 231, 0.28);
+    background: var(--surface-soft);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    box-shadow: none;
 }
-.download-card .meta .label { font-size: 0.78rem; color: var(--text-subtle); }
-.download-card .meta .title { font-weight: 700; font-size: 1.05rem; }
+.download-card .meta { min-width: 0; }
+.download-card .meta .label {
+    font-size: 0.72rem;
+    color: var(--text-subtle);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.download-card .meta .title { font-weight: 700; font-size: 1rem; }
 .download-card .cta {
     margin-left: auto;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 8px 16px;
-    background: var(--accent);
-    color: var(--accent-contrast);
+    padding: 8px 14px;
+    background: var(--text);
+    color: var(--bg);
     border-radius: 10px;
     font-weight: 600;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
+    white-space: nowrap;
 }
 
 /* ---- Divider headline ------------------------------------------------- */
