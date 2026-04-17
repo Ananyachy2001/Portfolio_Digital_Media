@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills (Retro Style)</title>
+  <style>
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 15px;
+      border: 2px dashed #333;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #333;
+      padding-bottom: 5px;
+    }
+
+    /* Skill Categories (Collapsible) */
+    .skill-category {
+      margin: 5px 0;
+      padding: 5px;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .skill-category::before {
+      content: "[+]";
+      position: absolute;
+      left: 5px;
+      color: #333;
+      margin-right: 5px;
+    }
+
+    .skill-category.active::before {
+      content: "[-]";
+    }
+
+    .skill-list {
+      list-style: square;
+      padding-left: 20px;
+      margin: 0;
+      display: none;
+    }
+
+    .skill-list li {
+      margin: 2px 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Skills &amp; Expertise</h2>
+
+    <!-- Programming Languages -->
+    <div class="skill-category">Programming Languages</div>
+    <ul class="skill-list">
+      <li>Python (Professional Level)</li>
+      <li>Laravel / PHP (Professional Level)</li>
+      <li>Java (Intermediate Level)</li>
+      <li>C/C++ (Intermediate Level)</li>
+      <li>ASP.NET (Intermediate Level)</li>
+    </ul>
+
+    <!-- Web Technologies -->
+    <div class="skill-category">Web Technologies</div>
+    <ul class="skill-list">
+      <li>HTML5 / CSS3 / Bootstrap / Tailwind</li>
+      <li>React (JavaScript library)</li>
+      <li>React Native (Mobile Development)</li>
+      <li>JavaScript / Node.js</li>
+      <li>REST APIs</li>
+    </ul>
+
+    <!-- Machine Learning & Computer Vision -->
+    <div class="skill-category">Machine Learning &amp; Computer Vision</div>
+    <ul class="skill-list">
+      <li>Deep Learning (CNN, Transfer Learning)</li>
+      <li>YOLOv5 (Real-time Object Detection)</li>
+      <li>Image Classification &amp; Anomaly Detection</li>
+      <li>TensorFlow / Keras</li>
+      <li>Image Processing</li>
+    </ul>
+
+    <!-- Tools & Frameworks -->
+    <div class="skill-category">Tools &amp; Frameworks</div>
+    <ul class="skill-list">
+      <li>Jupyter Notebook / Anaconda</li>
+      <li>Postman (API Testing)</li>
+      <li>Selenium (Automated Testing)</li>
+      <li>Inertia.js (Laravel)</li>
+      <li>Canva.js (Medical Visualization)</li>
+    </ul>
+
+    <!-- Databases -->
+    <div class="skill-category">Databases</div>
+    <ul class="skill-list">
+      <li>MySQL</li>
+      <li>Oracle</li>
+      <li>MongoDB</li>
+    </ul>
+
+    <!-- Data & Business Tools -->
+    <div class="skill-category">Data &amp; Business Tools</div>
+    <ul class="skill-list">
+      <li>Power BI (Data Visualization &amp; Analytics)</li>
+      <li>Microsoft Office Suite</li>
+      <li>MATLAB</li>
+      <li>AutoCAD (2007)</li>
+    </ul>
+
+    <!-- Design & Multimedia -->
+    <div class="skill-category">Design &amp; Multimedia</div>
+    <ul class="skill-list">
+      <li>Blender (3D Graphics &amp; Animation)</li>
+      <li>UI/UX Design Principles</li>
+      <li>Responsive Design</li>
+    </ul>
+
+    <!-- Version Control & Collaboration -->
+    <div class="skill-category">Version Control &amp; Collaboration</div>
+    <ul class="skill-list">
+      <li>GitHub</li>
+      <li>Git</li>
+      <li>Team Collaboration &amp; Project Management</li>
+    </ul>
+
+    <!-- Soft Skills -->
+    <div class="skill-category">Soft Skills</div>
+    <ul class="skill-list">
+      <li>Research-Oriented Mindset</li>
+      <li>Constant Learner</li>
+      <li>Team Player</li>
+      <li>Creative Problem-Solving</li>
+      <li>Project Management</li>
+      <li>Analytical Thinking</li>
+    </ul>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get all skill categories
+        const categories = document.querySelectorAll(".skill-category");
+
+        categories.forEach(category => {
+            category.addEventListener("click", function () {
+                // Toggle active class for arrow change
+                this.classList.toggle("active");
+
+                // Find the next sibling (which should be the UL list)
+                let skillList = this.nextElementSibling;
+
+                if (skillList.style.display === "block") {
+                    skillList.style.display = "none";
+                } else {
+                    skillList.style.display = "block";
+                }
+            });
+        });
+    });
+  </script>
+</body>
+</html>

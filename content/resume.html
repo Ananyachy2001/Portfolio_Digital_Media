@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananya Chowdhury - Resume</title>
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        li:last-child {
+            margin-bottom: 20px;
+        }
+        .job-title {
+            font-weight: bold;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .contact-info { margin-bottom: 20px; }
+        .section { margin-bottom: 20px; }
+        .section h2 { border-bottom: 2px solid #2c3e50; padding-bottom: 5px; }
+        ul { list-style-type: square; }
+
+        .clickable-images img {
+            width: 210px; /* Adjust for better viewing */
+            height: 297px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Hover effect */
+        .clickable-images img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        }
+        .image-caption {
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+    <div class="resume"> 
+        <header>
+            <h1><strong>Ananya Chowdhury</strong></h1>
+            <p class="contact-info">
+                <strong>Phone:</strong> +49 163 1306903 | 
+                <strong>Email:</strong> <a href="mailto:ananyachy2001@gmail.com">ananyachy2001@gmail.com</a> | 
+                <strong>GitHub:</strong> <a href="https://github.com/Ananyachy2001" target="_blank">github.com/Ananyachy2001</a> |
+                <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ananya-chowdhury-085883176/" target="_blank">linkedin.com/in/ananya-chowdhury</a>
+            </p>
+            <p><strong>Location:</strong> Bakeweg, 28197, Bremen, Germany | <strong>Portfolio:</strong> <a href="https://ananyaportfolio1.netlify.app/" target="_blank">ananyaportfolio1.netlify.app</a></p>
+        </header>
+    
+        <section class="section">
+            <h2>Education</h2>
+            <p><strong>MSc in Digital Media and Informatics</strong><br>
+            University of Bremen | 10/2025 - Present | Bremen, Germany</p>
+
+            <p><strong>BSc in Computer Science and Engineering</strong> (CGPA: 3.69/4.0)<br>
+            American International University Bangladesh (AIUB) | 09/2018 - 03/2023 | Dhaka, Bangladesh</p>
+            
+            <p><strong>Thesis:</strong> "Comparative and Improvement Study of Pothole Detection Using Deep Learning Algorithms" (2023)</p>
+        </section>
+    
+        <section class="section">
+            <h2>Work Experience</h2>
+            
+            <p><strong>Junior Software Engineer</strong>, Drasson (New York, USA)<br>
+            01/10/2023 - 03/2025 | Remote Work</p>
+            <ul>
+                <li>Developed web and mobile applications using React, React Native, Laravel, and Node.js</li>
+                <li>Built and tested REST APIs using Laravel and Node.js with comprehensive Postman testing</li>
+                <li>Implemented automated testing with Selenium for quality assurance</li>
+                <li>Managed client communications and optimized SEO strategies</li>
+            </ul>
+
+            <p><strong>Software Developer Intern</strong>, Proxmed (Australia)<br>
+            06/2023 - 08/2023 | Remote Work</p>
+            <ul>
+                <li>Built responsive React.js interfaces with HTML5, CSS3, and JavaScript for medical web platform</li>
+                <li>Enhanced UI/UX design with user-focused design principles for healthcare application</li>
+                <li>Implemented interactive medical image visualization using Canva.js</li>
+            </ul>
+
+            <p><strong>Laravel Developer Intern</strong>, Bracketi (Dhaka, Bangladesh)<br>
+            03/2023 - 05/2023 | Hybrid Office</p>
+            <ul>
+                <li>Developed company website with Laravel framework and Inertia.js backend</li>
+                <li>Built integration APIs for backend connectivity and services</li>
+                <li>Implemented business logic and database design requirements</li>
+            </ul>
+        </section>
+    
+        <section class="section">
+            <h2>Key Projects</h2>
+
+            <p><strong>Pothole Detection Using Deep Learning</strong> | Research Thesis (2023)</p>
+            <ul>
+                <li>Comparative study of pothole detection using CNN fine-tuning and YOLOv5 real-time detection</li>
+                <li>Achieved 97.34% CNN accuracy and 93.42% YOLOv5 detection precision</li>
+            </ul>
+
+            <p><strong>E-commerce Website (E-flip)</strong> | Laravel & React</p>
+            <ul>
+                <li>Full-stack e-commerce platform with Laravel REST API backend and React frontend</li>
+                <li>Features: product management, shopping cart, checkout, order management</li>
+            </ul>
+
+            <p><strong>Famous Footballer Classification</strong> | Python & Deep Learning</p>
+            <ul>
+                <li>Transfer learning-based image classification using VGG16, ResNet50, VGG19</li>
+                <li>Automated recognition system for famous footballers with high accuracy</li>
+            </ul>
+
+            <p><strong>YouTube Clone</strong> | React.js</p>
+            <ul>
+                <li>YouTube-style web application with video browsing and search functionality</li>
+                <li>Integrated external API for dynamic content loading and user discovery</li>
+            </ul>
+
+            <p><strong>Weather Website</strong> | JavaScript</p>
+            <ul>
+                <li>Interactive weather application with real-time data and automatic location detection</li>
+                <li>Manual location search with weather condition visualization</li>
+            </ul>
+        </section>
+    
+        <section class="section">
+            <h2>Technical Skills</h2>
+            <p><strong>Programming Languages:</strong> Python (Professional), Laravel/PHP (Professional), Java (Intermediate), C/C++ (Intermediate), ASP.NET (Intermediate)</p>
+            <p><strong>Web Technologies:</strong> HTML/CSS/Bootstrap/Tailwind, React, React Native, JavaScript/Node.js, REST APIs</p>
+            <p><strong>Machine Learning:</strong> Deep Learning, CNN, Transfer Learning, YOLOv5, TensorFlow/Keras, Image Processing</p>
+            <p><strong>Tools & Databases:</strong> Jupyter/Anaconda, Postman, Selenium, MySQL, Oracle, MongoDB, Power BI, MATLAB, Blender</p>
+            <p><strong>Development Tools:</strong> GitHub, Docker, Inertia.js, Canva.js</p>
+            
+            <h2>Languages</h2>
+            <p><strong>English:</strong> Highly Proficient (C1 Certified) | <strong>German:</strong> Basic Level (A2) | <strong>Bangla:</strong> Native Language</p>
+            
+            <h2>Soft Skills</h2>
+            <p>Research-Oriented, Constant Learner, Team Player, Creative Problem-Solving, Project Management, Analytical Mindset</p>
+        </section>
+    </div>
+    
+
+    <div class="clickable-images">
+        <figure>
+            <a href="./assets/documents/resume.pdf" download="resume.pdf">
+                <img src="./assets/images/home/resume.png" alt="Documentation" padding="10px">
+            </a>
+            <figcaption class="image-caption">Download Resume PDF</figcaption>
+        </figure>
+    </div>    
+</div>
+</body>
+</html>

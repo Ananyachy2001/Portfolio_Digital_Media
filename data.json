@@ -1,0 +1,44 @@
+{
+    "name": "Ananya Chowdhury - Portfolio",
+    "icon": "./assets/images/home/Ananyo1.png",
+
+    "pages": [
+        {
+            "icon": "./assets/images/home/Ananyo1.png",
+            "name": "About",
+            "link": "/about",
+            "content": "content/about.html"
+        },
+        {
+            "icon": "📖",
+            "name": "Resume",
+            "link": "/resume",
+            "content": "content/resume.html"
+        },
+        {
+            "icon": "bi bi-suitcase-lg-fill",
+            "name": "Work Experience",
+            "link": "/experience",
+            "content": "content/experience.html"
+        },
+        {
+            "icon": "✨",
+            "name": "Projects",
+            "link": "/projects",
+            "content": "content/projects.html"
+        },
+        {
+            "icon": "🎓",
+            "name": "Certifications",
+            "link": "/certifications",
+            "content": "content/certifications.html"
+        },
+        {
+            "icon": "✉️",
+            "name": "Contact",
+            "link": "/contact",
+            "content": "content/contact.md"
+        }
+    ]
+
+}

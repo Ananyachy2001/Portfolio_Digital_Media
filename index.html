@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ananya Chowdhury - Portfolio</title>
+        <meta name="description" content="Ananya Chowdhury - MSc Digital Media & Informatics Student | Machine Learning | Computer Vision | Software Engineer" />
+        <link
+            rel="shortcut icon"
+            href="./assets/Ananyo1.png"
+            type="image/x-icon"
+        />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Title of the project" />
+        <meta property="og:description" content="" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://github.com/Ananyachy2001" />
+        <!--Replace with the current website url-->
+        <meta property="og:image" content="" />
+
+        <!-- <link rel="stylesheet" href="../../tailwind-css/tailwind-runtime.css" /> -->
+        <link rel="stylesheet" href="./css/tailwind-build.css" />
+        <link rel="stylesheet" href="css/index.css" />
+        <link rel="stylesheet" href="css/content.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body
+        class="tw-flex tw-min-h-[100vh] tw-flex-col tw-text-base tw-font-sans"
+        style="background: var(--background-color); color: var(--primary-text-color);"
+    >
+
+        <div class="tw-flex tw-w-full" id="main-flex-container" style="background: var(--background-color); min-height: 100vh;">
+            <section
+                class="tw-relative tw-bg-secondary tw-text-textColor tw-flex tw-w-full tw-flex-col sidebar-section"
+                style="background: var(--sidebar-bg); color: var(--sidebar-text);"
+            >
+
+
+                <div class="tw-w-full tw-gap-2 tw-flex tw-p-4 sidebar-header-wrap">
+                    <div class="page-link brand-link tw-flex tw-flex-gap-1">
+                        <div class="">Ananya's Portfolio</div>
+                        <i class="bi bi-chevron-down tw-text-sm"></i>
+                    </div>
+
+                    <button onclick="openSearch()" class="page-link tw-text-base tw-flex tw-flex-gap-1">
+                        <i class="bi bi-search"></i>
+                        <div class="">Search</div>
+                    </button>
+
+                    <button onclick="loadPage('/about')" class="page-link tw-text-base tw-flex tw-flex-gap-1" id="home-quick-link">
+                        <i class="bi bi-house"></i>
+                        <div class="">Home</div>
+                    </button>
+
+                    <button id="dark-mode-toggle" class="btn theme-toggle" title="Toggle dark mode" aria-label="Enable dark mode">
+                        <i class="bi bi-moon"></i>
+                        <span class="theme-toggle-label">Dark</span>
+                    </button>
+                </div>
+
+                <div
+                    class="tw-flex tw-px-4 tw-p-1 tw tw-w-full tw-gap-1"
+                    id="sidebar-content"
+                >   
+                    
+                </div>
+            </section>
+
+            <section
+                class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col main-content-section"
+                style="background: var(--section-bg); color: var(--primary-text-color);"
+            >   
+
+                <div class="tw-overflow-auto tw-min-h-[30vh] tw-h-full tw-px-[25%] tw-w-full">
+                    <div class="tw-w-full tw-flex tw-mt-[140px]">
+                        <div class="tw-w-[85px] tw-h-[85px] tw-flex tw-place-content-center tw-items-center tw-text-6xl tw-overflow-hidden tw-text-6xl tw-rounded-lg" id="content-icon">
+
+                        </div>
+                    </div>
+                    <div
+                        class="tw-mt-8 tw-gap-10 content tw-pb-[30vh]" id="content"
+                    >
+                        
+                    </div>
+                </div>
+            </section>
+        
+        </div>
+
+        <div class="tw-fixed tw-hidden tw-z-10 tw-top-0 tw-flex tw-w-full tw-h-full tw-bg-[#2f2f2fb3]" id="search-bg-container">
+
+            <div class="tw-relative tw-flex tw-w-full tw-h-full ">
+                <div id="search-container" class="tw-absolute tw-overflow-hidden tw-left-[50%] tw--translate-x-[50%] tw-top-24 tw-w-[750px] tw-h-[500px] tw-rounded-xl" style="background: var(--section-bg); color: var(--primary-text-color);">
+
+                    <div class="tw-flex tw-px-4 tw-p-2 tw-text-lg tw-w-full tw-place-items-center tw-gap-2">
+                        <i class="bi bi-search"></i>
+                        <input type="text" oninput="updateSearch(event)" class="tw-w-full input" autofocus placeholder="Search" id="search-input">
+                    </div>
+
+                    <div class="tw-w-full tw-h-[2px] tw-bg-[#ededec]"></div>
+
+                    <div class="tw-flex tw-flex-col tw-p-2 tw-text-textColor tw-h-[400px]  tw-overflow-y-auto">
+
+                        <div class="tw-text-[12px] tw-text-[#93928f]">
+                            Today
+                        </div>
+
+                        <div class="tw-flex tw-flex-col" id="search-dropdown">
+                            <div class="tw-flex tw-rounded-md tw-p-2 tw-px-3 tw-w-full hover:tw-bg-[#f1f0ef]">
+                                edwed
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tw-w-full tw-h-[2px] tw-bg-[#ededec]"></div>
+
+                    <div class="tw-w-full tw-h-[30px]">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/arduino-light.min.css" integrity="sha512-M4nH9C7TRCVWLGruh9fHTfYxGWDiKpOGNjpfC9irhF06aLiYmJczZlW+/6IKOZ+75AGk4Wn4clgd6J13T0zzXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-6yoqbrcLAHDWAdQmiRlHG4+m0g/CT/V9AGyxabG8j7Jk8j3r3K6due7oqpiRMZqcYe9WM2gPcaNNxnl2ux+3tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="
+    https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js
+    "></script>
+
+    <script src="./scripts/utils.js"></script>
+    <script src="./scripts/plugins.js"></script>
+    <script src="./index.js"></script>
+</html>
