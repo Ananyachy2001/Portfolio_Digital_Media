@@ -1,449 +1,305 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects & Research</title>
-    <style>
-        body {
-            font-family: Inter, sans-serif;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
-        h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-        }
-        .project-title {
-            font-weight: bold;
-            margin: 5px 0;
-        }
-        .project-description {
-            color: #555;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        .image-caption {
-            font-style: italic;
-            font-size: 13px;
-            color: #717171;
-            margin-top: 8px;
-            text-align: center;
-        }
-        .clickable-images {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .image-wrapper {
-            width: 297px;
-            height: 210px;
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #ccc;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .image-wrapper:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-        }
-        .image-wrapper img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        .image-caption-small {
-            text-align: center;
-            font-size: 14px;
-            color: #555;
-            margin-top: 5px;
-            font-style: italic;
-            display: block;
-        }
-        figure {
-            margin: 0;
-        }
-        figure a {
-            text-decoration: none;
-        }
-        hr {
-            border: none;
-            height: 1px;
-            background-color: #ccc;
-            margin: 40px 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>Projects & Research</h2>
+<section class="section">
+    <span class="eyebrow">Portfolio</span>
+    <h1>Projects &amp; research</h1>
+    <p class="lead">
+        A selection of research, full-stack and graphics work spanning
+        academic projects, client builds and open-source experiments.
+    </p>
+    <ul class="tag-list filter-row">
+        <li class="tag accent">Featured</li>
+        <li class="tag">Machine learning</li>
+        <li class="tag">Full-stack</li>
+        <li class="tag">Data</li>
+        <li class="tag">Graphics</li>
+    </ul>
+</section>
 
-        <!-- Pothole Detection Thesis -->
-        <div class="project-title">🎓 Pothole Detection - Research Thesis 2023</div>
-        <div class="project-description">
-            My research thesis focused on developing an advanced computer vision system for automatic pothole detection on road surfaces. The project leverages deep learning and object detection models to identify and classify road defects with high precision for infrastructure maintenance.
-        </div>
-        <div class="image-container">
-            <figure>
-                <img src="./assets/images/project/pothole.jpg" alt="Pothole Detection System">
-                <figcaption class="image-caption">Pothole Detection Model Results</figcaption>
-            </figure>
-        </div>
-        <div class="project-description">
-            The system was designed using state-of-the-art deep learning frameworks and computer vision techniques. It processes road images to detect and localize potholes, providing valuable data for infrastructure management. The model achieves excellent detection accuracy across various road conditions and lighting scenarios.
-        </div>
-        <!-- <div class="clickable-images">
-            <figure>
-                <a href="#" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/project/pothole.jpg" alt="Thesis Paper">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">Read Thesis</figcaption>
-            </figure>
-            <figure>
-                <a href="#" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/home/github.png" alt="GitHub Repository">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">View GitHub</figcaption>
-            </figure>
-        </div> -->
+<section class="section">
+    <div class="grid-cards">
+        <article class="project-card">
+            <div class="thumb">
+                <img src="./assets/images/project/pothole.jpg" alt="Pothole detection" />
+                <span class="badge">Thesis · 2023</span>
+            </div>
+            <div class="body">
+                <h3>Pothole detection — research thesis</h3>
+                <p class="desc">
+                    Comparative study of CNN and YOLOv5 for real-time pothole
+                    detection. Custom dataset, transfer learning, and
+                    deployment-ready inference for infrastructure maintenance.
+                </p>
+                <ul class="tag-list">
+                    <li class="tag">CNN</li>
+                    <li class="tag">YOLOv5</li>
+                    <li class="tag">Python</li>
+                </ul>
+                <div class="footer">
+                    <span>97.34% accuracy</span>
+                    <span class="links"></span>
+                </div>
+            </div>
+        </article>
 
-        <hr>
+        <article class="project-card">
+            <div class="thumb">
+                <img
+                    src="./assets/images/project/Customer_behaviour_Dashboard.png"
+                    alt="Customer behaviour analytics"
+                />
+                <span class="badge">Data · 2024</span>
+            </div>
+            <div class="body">
+                <h3>Customer behaviour analytics</h3>
+                <p class="desc">
+                    End-to-end pipeline with Python and PostgreSQL, surfaced
+                    through a Power BI dashboard for customer segmentation and
+                    business insights.
+                </p>
+                <ul class="tag-list">
+                    <li class="tag">Python</li>
+                    <li class="tag">PostgreSQL</li>
+                    <li class="tag">Power BI</li>
+                </ul>
+                <div class="footer">
+                    <span>Analytics</span>
+                    <span class="links">
+                        <a
+                            href="https://github.com/Ananyachy2001/Customer_Behavior_Analysis"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="GitHub"
+                        ><i class="bi bi-github"></i></a>
+                    </span>
+                </div>
+            </div>
+        </article>
 
-        <!-- Customer Behavior Analysis -->
-        <div class="project-title">📊 Customer Behavior Analysis - Data Analytics</div>
-        <div class="project-description">
-            Developed a comprehensive data analytics project analyzing customer shopping behavior using Python, PostgreSQL, and Power BI. The project demonstrates an end-to-end data analytics workflow from raw data ingestion to delivering actionable insights through interactive dashboards.
-        </div>
-        <div class="image-container">
-            <figure>
-                <img src="./assets/images/project/Customer_behaviour_Dashboard.png" alt="Customer Behavior Dashboard">
-                <figcaption class="image-caption">Power BI Analytics Dashboard</figcaption>
-            </figure>
-        </div>
-        <div class="project-description">
-            The project includes data cleaning, exploratory data analysis, SQL querying, and interactive dashboard creation. Key features include customer segmentation analysis, purchase pattern identification, and business intelligence metrics. The Power BI dashboard provides stakeholders with drill-down capabilities and visual representations of key findings for data-driven decision making.
-        </div>
-        <div class="clickable-images">
-            <figure>
-                <a href="https://github.com/Ananyachy2001/Customer_Behavior_Analysis" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/home/github.jpg" alt="GitHub Repository">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">View GitHub</figcaption>
-            </figure>
-        </div>
+        <article class="project-card">
+            <div class="thumb">
+                <img src="./assets/images/project/Eflip.png" alt="E-flip e-commerce" />
+                <span class="badge">Full-stack</span>
+            </div>
+            <div class="body">
+                <h3>E-flip — e-commerce platform</h3>
+                <p class="desc">
+                    Full-stack shop with Laravel REST API and a React
+                    frontend. Auth, catalog, cart, order processing, and
+                    admin workflows.
+                </p>
+                <ul class="tag-list">
+                    <li class="tag">Laravel</li>
+                    <li class="tag">React</li>
+                    <li class="tag">MySQL</li>
+                </ul>
+                <div class="footer">
+                    <span>Full-stack</span>
+                    <span class="links">
+                        <a
+                            href="https://github.com/Ananyachy2001/APWT_MID_PROJECT"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="GitHub"
+                        ><i class="bi bi-github"></i></a>
+                    </span>
+                </div>
+            </div>
+        </article>
 
-        <hr>
+        <article class="project-card">
+            <div class="thumb">
+                <img
+                    src="./assets/images/project/FFC.png"
+                    alt="Famous footballer classification"
+                />
+                <span class="badge">ML</span>
+            </div>
+            <div class="body">
+                <h3>Famous footballer classification</h3>
+                <p class="desc">
+                    Deep-learning image classifier using transfer learning on
+                    pre-trained CNNs to recognise famous footballers from
+                    photos.
+                </p>
+                <ul class="tag-list">
+                    <li class="tag">CNN</li>
+                    <li class="tag">Transfer learning</li>
+                    <li class="tag">Python</li>
+                </ul>
+                <div class="footer">
+                    <span>Classification</span>
+                    <span class="links">
+                        <a
+                            href="https://github.com/Ananyachy2001/Famous_Footballer_Classification"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="GitHub"
+                        ><i class="bi bi-github"></i></a>
+                    </span>
+                </div>
+            </div>
+        </article>
 
-        <!-- E-flip E-commerce -->
-        <div class="project-title">E-flip - E-commerce Platform</div>
-        <div class="project-description">
-            Built a full-stack e-commerce platform combining Laravel backend with React.js frontend. The platform provides a complete shopping experience with product catalog, user authentication, shopping cart, and payment integration.
-        </div>
-        <div class="image-container">
-            <figure>
-                <img src="./assets/images/project/Eflip.png" alt="E-flip Platform">
-                <figcaption class="image-caption">E-flip Homepage</figcaption>
-            </figure>
-        </div>
-        <div class="project-description">
-            The project demonstrates full-stack development expertise with modern web technologies. Backend API is built with Laravel for robust server-side logic, while the frontend uses React for interactive and responsive user interface. The platform includes features like product filtering, user management, and order processing.
-        </div>
-        <div class="clickable-images">
-            <!-- <figure>
-                <a href="#" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/home/eflip-demo.png" alt="Live Demo">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">Live Demo</figcaption>
-            </figure> -->
-            <figure>
-                <a href="https://github.com/Ananyachy2001/APWT_MID_PROJECT" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/home/github.jpg" alt="GitHub Repository">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">View GitHub</figcaption>
-            </figure>
-        </div>
+        <article class="project-card">
+            <div class="thumb">
+                <img src="./assets/images/project/youtubeclone.png" alt="YouTube clone" />
+                <span class="badge">Web</span>
+            </div>
+            <div class="body">
+                <h3>YouTube clone</h3>
+                <p class="desc">
+                    React.js clone with video browsing, search and a
+                    responsive UI driven by a public video API.
+                </p>
+                <ul class="tag-list">
+                    <li class="tag">React</li>
+                    <li class="tag">API</li>
+                    <li class="tag">Responsive</li>
+                </ul>
+                <div class="footer">
+                    <span>Live demo</span>
+                    <span class="links">
+                        <a
+                            href="https://mediayoutube.netlify.app/"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="Live demo"
+                        ><i class="bi bi-box-arrow-up-right"></i></a>
+                        <a
+                            href="https://github.com/Ananyachy2001/YoutubeMedia"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="GitHub"
+                        ><i class="bi bi-github"></i></a>
+                    </span>
+                </div>
+            </div>
+        </article>
 
-        <hr>
+        <article class="project-card">
+            <div class="thumb">
+                <img src="./assets/images/project/Weather.png" alt="Weather app" />
+                <span class="badge">JS</span>
+            </div>
+            <div class="body">
+                <h3>Weather app</h3>
+                <p class="desc">
+                    Vanilla JavaScript weather app with live conditions,
+                    forecasts and location-based search powered by public
+                    APIs.
+                </p>
+                <ul class="tag-list">
+                    <li class="tag">JavaScript</li>
+                    <li class="tag">Async / fetch</li>
+                </ul>
+                <div class="footer">
+                    <span>Live demo</span>
+                    <span class="links">
+                        <a
+                            href="https://weatherappbyayon.netlify.app/"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="Live demo"
+                        ><i class="bi bi-box-arrow-up-right"></i></a>
+                        <a
+                            href="https://github.com/Ananyachy2001/Weather-App"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="GitHub"
+                        ><i class="bi bi-github"></i></a>
+                    </span>
+                </div>
+            </div>
+        </article>
 
-        <!-- Famous Footballer Classification -->
-        <div class="project-title">Famous Footballer Classification - Deep Learning</div>
-        <div class="project-description">
-            Developed a deep learning model to classify famous footballers from images using convolutional neural networks. The project involves image processing, model training, and evaluation on a custom dataset of footballer images.
-        </div>
-        <div class="image-container">
-            <figure>
-                <img src="./assets/images/project/FFC.png" alt="Footballer Classification">
-                <figcaption class="image-caption">Model Training Results</figcaption>
-            </figure>
-        </div>
-        <div class="project-description">
-            The model was trained using transfer learning with pre-trained CNN architectures, achieving high accuracy in player recognition. The project includes data preprocessing, model optimization, and evaluation metrics to ensure reliable classification performance.
-        </div>
-        <div class="clickable-images">
-            <!-- <figure>
-                <a href="#" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/home/model-demo.png" alt="Model Demo">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">Try Model</figcaption>
-            </figure> -->
-            <figure>
-                <a href="https://github.com/Ananyachy2001/Famous_Footballer_Classification" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/home/github.jpg" alt="GitHub Repository">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">View GitHub</figcaption>
-            </figure>
-        </div>
+        <article class="project-card">
+            <div class="thumb">
+                <img src="./assets/images/project/city.png" alt="City view" />
+                <span class="badge">OpenGL · C++</span>
+            </div>
+            <div class="body">
+                <h3>City view — OpenGL graphics</h3>
+                <p class="desc">
+                    3D city visualisation in C++ and OpenGL with building
+                    meshes, textures, lighting and interactive camera control.
+                </p>
+                <ul class="tag-list">
+                    <li class="tag">OpenGL</li>
+                    <li class="tag">C++</li>
+                    <li class="tag">Graphics</li>
+                </ul>
+                <div class="footer">
+                    <span>Graphics</span>
+                    <span class="links">
+                        <a
+                            href="https://github.com/Ananyachy2001/City_View_with_CG"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="GitHub"
+                        ><i class="bi bi-github"></i></a>
+                    </span>
+                </div>
+            </div>
+        </article>
 
-        <hr>
+        <article class="project-card">
+            <div class="thumb">
+                <img src="./assets/images/project/School.png" alt="School management" />
+                <span class="badge">.NET</span>
+            </div>
+            <div class="body">
+                <h3>School management system</h3>
+                <p class="desc">
+                    C# / .NET desktop app with role-based access for
+                    students, teachers and admins. Handles records, courses
+                    and reporting.
+                </p>
+                <ul class="tag-list">
+                    <li class="tag">C#</li>
+                    <li class="tag">.NET</li>
+                    <li class="tag">SQL Server</li>
+                </ul>
+                <div class="footer">
+                    <span>Internal tool</span>
+                    <span class="links">
+                        <a
+                            href="https://github.com/Ananyachy2001/SchoolManagementSystem"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="GitHub"
+                        ><i class="bi bi-github"></i></a>
+                    </span>
+                </div>
+            </div>
+        </article>
 
-        <!-- YouTube Clone -->
-        <div class="project-title">YouTube Clone - React.js Application</div>
-        <div class="project-description">
-            Created a YouTube clone web application using React.js that replicates core YouTube features. The application includes video browsing, search functionality, and user interaction features with a modern, responsive design.
-        </div>
-        <div class="image-container">
-            <figure>
-                <img src="./assets/images/project/youtubeclone.png" alt="YouTube Clone Interface">
-                <figcaption class="image-caption">YouTube Clone Homepage</figcaption>
-            </figure>
-        </div>
-        <div class="project-description">
-            The project leverages React's component-based architecture and modern state management. It integrates with APIs to fetch video data and provides a seamless user experience similar to the original YouTube platform. The application is fully responsive and works across different devices.
-        </div>
-        <div class="clickable-images">
-            <figure>
-                <a href="https://mediayoutube.netlify.app/" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/project/youtubeclone.png" alt="Live Demo">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">Live Demo</figcaption>
-            </figure>
-            <figure>
-                <a href="https://github.com/Ananyachy2001/YoutubeMedia" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/home/github.jpg" alt="GitHub Repository">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">View GitHub</figcaption>
-            </figure>
-        </div>
-
-        <hr>
-
-        <!-- Weather Website -->
-        <div class="project-title">Weather Website - JavaScript Application</div>
-        <div class="project-description">
-            Developed a dynamic weather application using vanilla JavaScript that provides real-time weather information. The application fetches data from weather APIs and displays current conditions, forecasts, and detailed meteorological data.
-        </div>
-        <div class="image-container">
-            <figure>
-                <img src="./assets/images/project/Weather.png" alt="Weather Application">
-                <figcaption class="image-caption">Weather Application Interface</figcaption>
-            </figure>
-        </div>
-        <div class="project-description">
-            The application features location-based weather data, interactive maps, and detailed forecast information. It uses asynchronous JavaScript to fetch real-time data and provides an intuitive user interface for checking weather conditions across different locations.
-        </div>
-        <div class="clickable-images">
-            <figure>
-                <a href="https://weatherappbyayon.netlify.app/" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/project/Weather.png" alt="Live Demo">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">Try Application</figcaption>
-            </figure>
-            <figure>
-                <a href="https://github.com/Ananyachy2001/Weather-App" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/home/github.jpg" alt="GitHub Repository">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">View GitHub</figcaption>
-            </figure>
-        </div>
-
-        <hr>
-
-        <!-- City View -->
-        <div class="project-title">City View - OpenGL & C++ Graphics Project</div>
-        <div class="project-description">
-            Built a 3D city visualization application using OpenGL and C++. The project demonstrates advanced graphics programming with realistic rendering of urban environments, buildings, and landscapes.
-        </div>
-        <div class="clickable-images">
-            <figure>
-                <a href="#" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/project/city.png" alt="Source Code">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">City View</figcaption>
-            </figure>
-            <figure>
-                <a href="#" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/project/aiub.png" alt="Source Code">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">University View</figcaption>
-            </figure>
-            <figure>
-                <a href="#" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/project/portview.png" alt="Source Code">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">Port View</figcaption>
-            </figure>
-
-        </div>
-        <div class="project-description">
-            The application features 3D models, lighting effects, texturing, and camera controls for interactive exploration. It showcases graphics programming fundamentals including shader programming, mesh rendering, and performance optimization for smooth rendering.
-        </div>
-        <div class="clickable-images">
-            <figure>
-                <a href="https://github.com/Ananyachy2001/City_View_with_CG" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/home/github.jpg" alt="GitHub Repository">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">View GitHub</figcaption>
-            </figure>
-        </div>
-
-        <hr>
-
-        <!-- School Management System -->
-        <div class="project-title">School Management System - C#/.NET</div>
-        <div class="project-description">
-            Developed a comprehensive school management system using C# and .NET framework. The system handles student records, course management, grade tracking, and administrative functions for educational institutions.
-        </div>
-        <div class="image-container">
-            <figure>
-                <img src="./assets/images/project/School.png" alt="School Management System">
-                <figcaption class="image-caption">System Dashboard</figcaption>
-            </figure>
-        </div>
-        <div class="project-description">
-            The application features a robust database design, user authentication, role-based access control, and comprehensive reporting. It provides administrators, teachers, and students with dedicated interfaces for managing educational data and operations efficiently.
-        </div>
-        <div class="clickable-images">
-            <!-- <figure>
-                <a href="#" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/home/documentation.png" alt="Documentation">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">Documentation</figcaption>
-            </figure> -->
-            <figure>
-                <a href="https://github.com/Ananyachy2001/SchoolManagementSystem" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/home/github.jpg" alt="GitHub Repository">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">View GitHub</figcaption>
-            </figure>
-        </div>
-
-        <hr>
-
-        <!-- Banking Management System -->
-        <div class="project-title">Banking Management System - Java</div>
-        <div class="project-description">
-            Created a comprehensive banking management system using Java with object-oriented design principles. The system manages customer accounts, transactions, loans, and financial operations with security and accuracy.
-        </div>
-
-        <div class="project-description">
-            The application includes features like account creation, fund transfers, transaction history, and financial reporting. It incorporates database management, user authentication, and maintains transactional integrity for reliable banking operations.
-        </div>
-        <div class="clickable-images">
-            <figure>
-                <a href="#" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/home/github.jpg" alt="GitHub Repository">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">View GitHub</figcaption>
-            </figure>
-        </div>
-
-        <hr>
-
-        <!-- COVID-19 Vaccination System -->
-        <div class="project-title">COVID-19 Vaccination System - PHP</div>
-        <div class="project-description">
-            Built a vaccination management system using PHP that tracks and manages COVID-19 vaccination records. The system helps healthcare facilities organize vaccination appointments and maintain accurate vaccination data.
-        </div>
-        <!-- <div class="image-container">
-            <figure>
-                <img src="" alt="Vaccination System">
-                <figcaption class="image-caption">Vaccination Management Interface</figcaption>
-            </figure>
-        </div> -->
-        <div class="project-description">
-            The application features appointment scheduling, vaccination record tracking, and reporting capabilities. It provides an intuitive interface for healthcare workers and patients to manage vaccination information efficiently and maintain data integrity.
-        </div>
-        <div class="clickable-images">
-            <!-- <figure>
-                <a href="#" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/home/system-demo.png" alt="System Demo">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">View Demo</figcaption>
-            </figure> -->
-            <figure>
-                <a href="https://github.com/Ananyachy2001/WT_FINAL_SUM21/tree/master/FinalProject" target="_blank">
-                    <div class="image-wrapper">
-                        <img src="./assets/images/home/github.jpg" alt="GitHub Repository">
-                    </div>
-                </a>
-                <figcaption class="image-caption-small">View GitHub</figcaption>
-            </figure>
-        </div>
-
-        <hr>
-
-
-
+        <article class="project-card">
+            <div class="thumb">
+                <img src="./assets/images/project/aiub.png" alt="Covid-19 vaccination system" />
+                <span class="badge">PHP</span>
+            </div>
+            <div class="body">
+                <h3>COVID-19 vaccination system</h3>
+                <p class="desc">
+                    PHP-based vaccination management system with appointment
+                    scheduling, record tracking and reporting for healthcare
+                    workflows.
+                </p>
+                <ul class="tag-list">
+                    <li class="tag">PHP</li>
+                    <li class="tag">MySQL</li>
+                </ul>
+                <div class="footer">
+                    <span>Web app</span>
+                    <span class="links">
+                        <a
+                            href="https://github.com/Ananyachy2001/WT_FINAL_SUM21/tree/master/FinalProject"
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="GitHub"
+                        ><i class="bi bi-github"></i></a>
+                    </span>
+                </div>
+            </div>
+        </article>
     </div>
-</body>
-</html>
-<!DOCTYPE html>
+</section>

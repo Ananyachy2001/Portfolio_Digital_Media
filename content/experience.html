@@ -1,266 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Experience</title>
-    <style>
-        body {
-            font-family: inter, sans-serif;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            
-        }
-        h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-        }
-        .job-title {
-            font-weight: bold;
-        }
-        .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 10px;
-        }
+<section class="section">
+    <span class="eyebrow">Career</span>
+    <h1>Work experience</h1>
+    <p class="lead">
+        Two years of production software engineering across e-commerce,
+        healthcare and B2B tooling — building with React, Laravel, Node.js and
+        React Native, and owning features end-to-end from API to UI.
+    </p>
+</section>
 
-        .image-container img {
-            width: 900px;
-            max-width: none;
-            height: auto;
-            display: block;
-            margin-top: 10px;
-            
-            /* Even shadow all around */
-            /*box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* No X/Y offset */
-            border-radius: 8px; /* Optional: adds rounded corners */
-        }
-
-        .image-title {
-            font-style: italic;
-            font-size: 15px;
-            color: #717171; /* Adjust color as needed */
-            margin-top: 8px;
-            text-align: center;
-        }
-        .card-img-container{
-            height: 150px;
-            width: 100%;
-            background-color:#f7f6f3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .pdf-container {
-            width: 800px;
-            height: 950px; /* Adjust this value to increase or decrease the height */
-            border: 1px solid #000; /* Optional border for visibility */
-        }
-        .clickable-images {
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* Space between images */
-            margin-top: 20px;
-        }
-
-        /* A4 size dimensions (approx. 210mm x 297mm) */
-        .clickable-images img {
-            width: 210px; /* Adjust for better viewing */
-            height: 297px;
-            object-fit: cover;
-            border: 1px solid #ccc;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        /* Hover effect */
-        .clickable-images img:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-        }
-        .image-caption {
-            text-align: center;
-            font-size: 14px;
-            color: #555;
-            margin-top: 5px;
-            font-style: italic;
-        }
-
-        /* --- NEW CSS FOR DFKI SLIDESHOW --- */
-        .dfki-slideshow-container {
-            position: relative; /* For positioning arrows */
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            margin-bottom: 10px;
-            width: 100%; /* Ensure container takes full width */
-        }
-
-        .dfki-slide {
-            display: none; /* Hide all slides by default */
-            flex-direction: column;
-            align-items: center;
-            width: 100%; 
-        }
-
-        .dfki-slide.active {
-            display: flex; /* Show the active slide */
-        }
-        
-        .dfki-slide img {
-             max-width: 80%; /* From your original style */
-             height: auto;
-             /* Reset styles from .image-container img if needed */
-             width: auto;
-             margin-top: 0;
-             border-radius: 8px;
-        }
-
-        .slideshow-btn {
-            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-            transition: background-color 0.3s ease;
-        }
-
-        .slideshow-btn:hover {
-            background-color: rgba(255, 255, 255, 0.8);
-        }
-
-        .slideshow-btn img {
-            width: 40px; /* Size for the icon inside the button */
-            height: 40px;
-            /* Reset any conflicting styles */
-            max-width: none; 
-            margin-top: 0;
-        }
-
-        .slideshow-controls {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between; /* Changed from flex-end */
-            align-items: center; /* Added for vertical alignment */
-            width: 100%;
-        }
-
-        /* --- NEW STYLES FOR SLIDESHOW DOTS --- */
-        .slideshow-dots {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-grow: 1; /* Allows dots to take the center space */
-        }
-
-        .slideshow-dot {
-            height: 10px;
-            width: 10px;
-            margin: 0 5px; /* Space between dots */
-            background-color: #bbb; /* Inactive dot color */
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-            cursor: pointer; /* Makes them feel clickable */
-        }
-        .slideshow-dots-container {
-            width: 100%;
-        }
-
-        .slideshow-dot.active {
-            background-color: #717171; /* Active dot color */
-        }
-        /* --- END OF NEW DOT STYLES --- */
-        /* --- END OF NEW CSS --- */
-
-    </style>
-</head>
-<body>
-    <div class="container" >
-        <div style="font-weight: bold;">
-            Junior Software Engineer @ Drasson (Full-Time)
-            <span style="font-style: italic; font-weight: normal;">(October 1, 2023 - March 2025) | Remote Work, New York, USA</span>
-        </div>
-
-        Developed web and mobile apps with React, React Native, Laravel, and Node.js. Built and tested REST APIs using Laravel, Node.js, and Postman. Automated testing with Selenium and managed SEO and client communications.
-        
-        <div class="achievement-card">
-            <strong class="achievement-title">Key Achievements</strong>
-            <ul class="achievement-list">
-                <li>Developed web and mobile apps with modern frameworks</li>
-                <li>Built and tested robust REST APIs in production</li>
-                <li>Automated testing processes and managed client communications</li>
+<section class="section">
+    <ul class="timeline">
+        <li class="timeline-item">
+            <div class="timeline-head">
+                <h3 class="timeline-role">Junior Software Engineer</h3>
+                <span class="timeline-company">
+                    <span class="company-name">Drasson</span> · New York, USA
+                </span>
+            </div>
+            <div class="timeline-meta">
+                <span><i class="bi bi-calendar-event"></i> Oct 2023 — Mar 2025</span>
+                <span><i class="bi bi-laptop"></i> Remote</span>
+                <span><i class="bi bi-clock-history"></i> Full-time</span>
+            </div>
+            <p class="timeline-desc">
+                Built web and mobile applications with React, React Native,
+                Laravel and Node.js. Owned REST API design, automated testing
+                and client-facing SEO work.
+            </p>
+            <div class="achievement-card">
+                <strong class="achievement-title">Key achievements</strong>
+                <ul class="achievement-list">
+                    <li>Delivered customer-facing web and mobile features with modern frameworks.</li>
+                    <li>Stood up production REST APIs with thorough Postman test coverage.</li>
+                    <li>Automated regression suites with Selenium, reducing release risk.</li>
+                </ul>
+            </div>
+            <ul class="tag-list">
+                <li class="tag accent">React</li>
+                <li class="tag">React Native</li>
+                <li class="tag">Laravel</li>
+                <li class="tag">Node.js</li>
+                <li class="tag">Selenium</li>
+                <li class="tag">Postman</li>
             </ul>
-        </div>
+        </li>
 
-        <hr style="margin: 30px 0;">
-
-        <div style="font-weight: bold;">
-            Software Developer Intern @ Proxmed (Part-Time)
-            <span style="font-style: italic; font-weight: normal;">(June 2023 - August 2023) | Remote Work, Australia</span>
-        </div>
-        
-        Built responsive React.js interfaces with HTML5, CSS3, and JavaScript. Enhanced UI/UX for a medical web platform with user-focused designs. Used Canva.js for interactive medical image visualization.
-        
-        <div class="achievement-card">
-            <strong class="achievement-title">Key Achievements</strong>
-            <ul class="achievement-list">
-                <li>Built responsive React interfaces for medical platform</li>
-                <li>Implemented medical image visualization tools</li>
-                <li>Enhanced UI/UX with user-focused design principles</li>
+        <li class="timeline-item">
+            <div class="timeline-head">
+                <h3 class="timeline-role">Software Developer Intern</h3>
+                <span class="timeline-company">
+                    <span class="company-name">Proxmed</span> · Australia
+                </span>
+            </div>
+            <div class="timeline-meta">
+                <span><i class="bi bi-calendar-event"></i> Jun 2023 — Aug 2023</span>
+                <span><i class="bi bi-laptop"></i> Remote</span>
+                <span><i class="bi bi-clock-history"></i> Part-time</span>
+            </div>
+            <p class="timeline-desc">
+                Built responsive React.js interfaces for a medical web
+                platform. Applied Canva.js for interactive medical image
+                visualisation and iterated on UX with a user-focused mindset.
+            </p>
+            <div class="achievement-card">
+                <strong class="achievement-title">Key achievements</strong>
+                <ul class="achievement-list">
+                    <li>Built responsive React interfaces for the clinician-facing platform.</li>
+                    <li>Implemented medical image visualisation tools using Canva.js.</li>
+                    <li>Iterated UX with user-focused design principles.</li>
+                </ul>
+            </div>
+            <ul class="tag-list">
+                <li class="tag accent">React</li>
+                <li class="tag">Canva.js</li>
+                <li class="tag">HTML / CSS</li>
+                <li class="tag">UX</li>
             </ul>
-        </div>
+        </li>
 
-        <hr style="margin: 30px 0;">
-
-        <div style="font-weight: bold;">
-            Laravel Developer Intern @ Bracketi (Part-Time)
-            <span style="font-style: italic; font-weight: normal;">(March 2023 - May 2023) | Hybrid Office, Dhaka, Bangladesh</span>
-        </div>
-        
-        Developed a company website with Laravel and Inertia.js. Built integration APIs.
-        
-        <div class="achievement-card">
-            <strong class="achievement-title">Key Achievements</strong>
-            <ul class="achievement-list">
-                <li>Developed company website with Laravel and Inertia.js</li>
-                <li>Built integration APIs</li>
-                <li>Collaborated on frontend-backend integration</li>
+        <li class="timeline-item">
+            <div class="timeline-head">
+                <h3 class="timeline-role">Laravel Developer Intern</h3>
+                <span class="timeline-company">
+                    <span class="company-name">Bracketi</span> · Dhaka, Bangladesh
+                </span>
+            </div>
+            <div class="timeline-meta">
+                <span><i class="bi bi-calendar-event"></i> Mar 2023 — May 2023</span>
+                <span><i class="bi bi-building"></i> Hybrid</span>
+                <span><i class="bi bi-clock-history"></i> Part-time</span>
+            </div>
+            <p class="timeline-desc">
+                Built the company website with Laravel and Inertia.js, shipped
+                integration APIs for internal services, and collaborated
+                across teams on database design and business logic.
+            </p>
+            <div class="achievement-card">
+                <strong class="achievement-title">Key achievements</strong>
+                <ul class="achievement-list">
+                    <li>Developed the company marketing site using Laravel and Inertia.js.</li>
+                    <li>Built integration APIs connecting backend services.</li>
+                    <li>Collaborated on database design and business logic.</li>
+                </ul>
+            </div>
+            <ul class="tag-list">
+                <li class="tag accent">Laravel</li>
+                <li class="tag">Inertia.js</li>
+                <li class="tag">MySQL</li>
             </ul>
-                </div>
-            <!-- <figure>
-                <img src="./assets/images/home/system_architecture_v2.jpg" alt="System Architecture">
-            </figure> -->
-        </div>
-        
-        <!-- The system includes a robust API gateway for secure and efficient request routing between services. A user activity tracking module was implemented to gather behavioral data, enhancing recommendation accuracy. Additionally, a rolling model update mechanism ensures seamless deployment of improved recommendation models without service interruptions, allowing continuous adaptation to evolving user preferences.
-
-        <div class="clickable-images">
-            <figure>
-                <a href="https://amineki6.github.io/movie-recommendation-system/Movie%20Recommendation%20System%20-%20Documentation.pdf" target="_blank">
-                    <img src="./assets/images/home/documentation.jpg" alt="Documentation">
-                </a>
-                <figcaption class="image-caption">View Documentation</figcaption>
-            </figure>
-            
-            <figure>
-                <a href="https://github.com/Amineki6/movie-recommendation-system" target="_blank">
-                    <img src="./assets/images/home/github.jpg" alt="GitHub Repository">
-                </a>
-                <figcaption class="image-caption">View GitHub Repository</figcaption>
-            </figure>
-        </div> -->
-
-    </div>
-    </body>
-</html>
+        </li>
+    </ul>
+</section>

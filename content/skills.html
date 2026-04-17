@@ -1,172 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Skills (Retro Style)</title>
-  <style>
+<section class="section">
+    <span class="eyebrow">Toolkit</span>
+    <h1>Skills &amp; expertise</h1>
+    <p class="lead">
+        Languages, frameworks and tools I use day-to-day — grouped by focus
+        area so you can quickly see where I'd add value.
+    </p>
+</section>
 
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: #fff;
-      padding: 15px;
-      border: 2px dashed #333;
-    }
+<section class="section">
+    <div class="skill-grid">
+        <div class="skill-group">
+            <h3><i class="bi bi-braces"></i> Programming languages</h3>
+            <ul class="tag-list">
+                <li class="tag accent">Python</li>
+                <li class="tag accent">PHP / Laravel</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">Java</li>
+                <li class="tag">C / C++</li>
+                <li class="tag">ASP.NET</li>
+                <li class="tag">C#</li>
+            </ul>
+        </div>
 
-    h2 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      border-bottom: 1px dashed #333;
-      padding-bottom: 5px;
-    }
+        <div class="skill-group">
+            <h3><i class="bi bi-window"></i> Web &amp; mobile</h3>
+            <ul class="tag-list">
+                <li class="tag accent">React</li>
+                <li class="tag">React Native</li>
+                <li class="tag">Node.js</li>
+                <li class="tag">Laravel + Inertia.js</li>
+                <li class="tag">Tailwind CSS</li>
+                <li class="tag">Bootstrap</li>
+                <li class="tag">HTML5 / CSS3</li>
+                <li class="tag">REST APIs</li>
+            </ul>
+        </div>
 
-    /* Skill Categories (Collapsible) */
-    .skill-category {
-      margin: 5px 0;
-      padding: 5px;
-      background: #f0f0f0;
-      border: 1px solid #ccc;
-      cursor: pointer;
-      font-weight: bold;
-      position: relative;
-    }
+        <div class="skill-group">
+            <h3><i class="bi bi-cpu"></i> Machine learning &amp; CV</h3>
+            <ul class="tag-list">
+                <li class="tag accent">CNN · Transfer learning</li>
+                <li class="tag accent">YOLOv5</li>
+                <li class="tag">TensorFlow</li>
+                <li class="tag">Keras</li>
+                <li class="tag">Image classification</li>
+                <li class="tag">Anomaly detection</li>
+                <li class="tag">Image processing</li>
+            </ul>
+        </div>
 
-    .skill-category::before {
-      content: "[+]";
-      position: absolute;
-      left: 5px;
-      color: #333;
-      margin-right: 5px;
-    }
+        <div class="skill-group">
+            <h3><i class="bi bi-database"></i> Databases</h3>
+            <ul class="tag-list">
+                <li class="tag">MySQL</li>
+                <li class="tag">PostgreSQL</li>
+                <li class="tag">Oracle</li>
+                <li class="tag">MongoDB</li>
+            </ul>
+        </div>
 
-    .skill-category.active::before {
-      content: "[-]";
-    }
+        <div class="skill-group">
+            <h3><i class="bi bi-tools"></i> Testing &amp; dev tooling</h3>
+            <ul class="tag-list">
+                <li class="tag">Postman</li>
+                <li class="tag">Selenium</li>
+                <li class="tag">Jupyter / Anaconda</li>
+                <li class="tag">Git / GitHub</li>
+                <li class="tag">Docker</li>
+            </ul>
+        </div>
 
-    .skill-list {
-      list-style: square;
-      padding-left: 20px;
-      margin: 0;
-      display: none;
-    }
+        <div class="skill-group">
+            <h3><i class="bi bi-bar-chart-line"></i> Data &amp; business</h3>
+            <ul class="tag-list">
+                <li class="tag accent">Power BI</li>
+                <li class="tag">Microsoft Office Suite</li>
+                <li class="tag">MATLAB</li>
+                <li class="tag">AutoCAD</li>
+            </ul>
+        </div>
 
-    .skill-list li {
-      margin: 2px 0;
-      font-size: 14px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h2>Skills &amp; Expertise</h2>
+        <div class="skill-group">
+            <h3><i class="bi bi-palette"></i> Design &amp; multimedia</h3>
+            <ul class="tag-list">
+                <li class="tag">Blender</li>
+                <li class="tag">Canva.js</li>
+                <li class="tag">UI / UX principles</li>
+                <li class="tag">Responsive design</li>
+            </ul>
+        </div>
 
-    <!-- Programming Languages -->
-    <div class="skill-category">Programming Languages</div>
-    <ul class="skill-list">
-      <li>Python (Professional Level)</li>
-      <li>Laravel / PHP (Professional Level)</li>
-      <li>Java (Intermediate Level)</li>
-      <li>C/C++ (Intermediate Level)</li>
-      <li>ASP.NET (Intermediate Level)</li>
-    </ul>
-
-    <!-- Web Technologies -->
-    <div class="skill-category">Web Technologies</div>
-    <ul class="skill-list">
-      <li>HTML5 / CSS3 / Bootstrap / Tailwind</li>
-      <li>React (JavaScript library)</li>
-      <li>React Native (Mobile Development)</li>
-      <li>JavaScript / Node.js</li>
-      <li>REST APIs</li>
-    </ul>
-
-    <!-- Machine Learning & Computer Vision -->
-    <div class="skill-category">Machine Learning &amp; Computer Vision</div>
-    <ul class="skill-list">
-      <li>Deep Learning (CNN, Transfer Learning)</li>
-      <li>YOLOv5 (Real-time Object Detection)</li>
-      <li>Image Classification &amp; Anomaly Detection</li>
-      <li>TensorFlow / Keras</li>
-      <li>Image Processing</li>
-    </ul>
-
-    <!-- Tools & Frameworks -->
-    <div class="skill-category">Tools &amp; Frameworks</div>
-    <ul class="skill-list">
-      <li>Jupyter Notebook / Anaconda</li>
-      <li>Postman (API Testing)</li>
-      <li>Selenium (Automated Testing)</li>
-      <li>Inertia.js (Laravel)</li>
-      <li>Canva.js (Medical Visualization)</li>
-    </ul>
-
-    <!-- Databases -->
-    <div class="skill-category">Databases</div>
-    <ul class="skill-list">
-      <li>MySQL</li>
-      <li>Oracle</li>
-      <li>MongoDB</li>
-    </ul>
-
-    <!-- Data & Business Tools -->
-    <div class="skill-category">Data &amp; Business Tools</div>
-    <ul class="skill-list">
-      <li>Power BI (Data Visualization &amp; Analytics)</li>
-      <li>Microsoft Office Suite</li>
-      <li>MATLAB</li>
-      <li>AutoCAD (2007)</li>
-    </ul>
-
-    <!-- Design & Multimedia -->
-    <div class="skill-category">Design &amp; Multimedia</div>
-    <ul class="skill-list">
-      <li>Blender (3D Graphics &amp; Animation)</li>
-      <li>UI/UX Design Principles</li>
-      <li>Responsive Design</li>
-    </ul>
-
-    <!-- Version Control & Collaboration -->
-    <div class="skill-category">Version Control &amp; Collaboration</div>
-    <ul class="skill-list">
-      <li>GitHub</li>
-      <li>Git</li>
-      <li>Team Collaboration &amp; Project Management</li>
-    </ul>
-
-    <!-- Soft Skills -->
-    <div class="skill-category">Soft Skills</div>
-    <ul class="skill-list">
-      <li>Research-Oriented Mindset</li>
-      <li>Constant Learner</li>
-      <li>Team Player</li>
-      <li>Creative Problem-Solving</li>
-      <li>Project Management</li>
-      <li>Analytical Thinking</li>
-    </ul>
-  </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Get all skill categories
-        const categories = document.querySelectorAll(".skill-category");
-
-        categories.forEach(category => {
-            category.addEventListener("click", function () {
-                // Toggle active class for arrow change
-                this.classList.toggle("active");
-
-                // Find the next sibling (which should be the UL list)
-                let skillList = this.nextElementSibling;
-
-                if (skillList.style.display === "block") {
-                    skillList.style.display = "none";
-                } else {
-                    skillList.style.display = "block";
-                }
-            });
-        });
-    });
-  </script>
-</body>
-</html>
+        <div class="skill-group">
+            <h3><i class="bi bi-people"></i> Soft skills</h3>
+            <ul class="tag-list">
+                <li class="tag">Research mindset</li>
+                <li class="tag">Constant learner</li>
+                <li class="tag">Team player</li>
+                <li class="tag">Problem-solving</li>
+                <li class="tag">Project management</li>
+                <li class="tag">Analytical thinking</li>
+            </ul>
+        </div>
+    </div>
+</section>
