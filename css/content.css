@@ -93,10 +93,15 @@
 .content a.download-card {
     border-bottom: none;
 }
-.content a.btn-primary { color: var(--accent-contrast); }
-.content a.btn-primary:hover { color: var(--accent-contrast); }
+/* Order matters: the generic .content a.btn rule must come BEFORE the
+   .btn-primary override, because btn-primary buttons carry both classes
+   (class="btn btn-primary"). If the generic rule wins by cascade order it
+   paints the label --text, which in dark mode equals the button bg and
+   makes it invisible. */
 .content a.btn,
 .content a.btn-ghost { color: var(--text); }
+.content a.btn.btn-primary,
+.content a.btn.btn-primary:hover { color: var(--accent-contrast); font-weight: 600; }
 
 .content ul,
 .content ol {
